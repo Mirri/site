@@ -15,18 +15,19 @@ $(window).ready(function()
 
 	$('#accordion > h3').click(function()
 	{
+		if(!$(this).hasClass('active')){
+		        $('#accordion > h3').removeClass('active');
+		        $('#accordion > div:visible').animate({height: 0, 'padding-top': 0, 'padding-bottom': 0}, 500, function() { $(this).hide() });
 		
-		$('#accordion > h3').removeClass('active');
-		$('#accordion > div:visible').animate({height: 0, 'padding-top': 0, 'padding-bottom': 0}, 500, function() { $(this).hide() });
 		
-		
-		$(this).addClass('active');
-		box = $(this).next().addClass('active');
-		$(box).animate(
-		{
-			height: $(box).data('height'), 
-			'padding-top': $(box).data('padding-top'), 
-			'padding-bottom': $(box).data('padding-bottom')
-		}, 500);
+		        $(this).addClass('active');
+		        box = $(this).next().addClass('active');
+		        $(box).animate(
+		        {
+			        height: $(box).data('height'), 
+			        'padding-top': $(box).data('padding-top'), 
+			        'padding-bottom': $(box).data('padding-bottom')
+		        }, 500);
+                }
 	});
 });
