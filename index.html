@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Башня над лесом</title>
+        <link rel="stylesheet" type="text/css" href="css2.css" />
+	<link rel="stylesheet" type="text/css" href="css.css" />
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+	<script type="text/javascript" src="prim.js"></script>
+        <link rel="stylesheet" href="http://yandex.st/highlightjs/7.2/styles/default.min.css">
+        <script src="http://yandex.st/highlightjs/7.2/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+    </head>
+    <body>
+        <h1>
+        Сайт-резюме
+        </h1>
+        <img src="foto.JPG">
+        <div class="content">
+            <div id="wrap">
+	        <div id="accordion">
+		    <h3 class="head">Общие вопросы</h3>
+		    <div class="block">
+                        <h4>Фамилия, имя, отчество</h4> 
+                        <p>Хворостян Мария Сергеевна</p>
+                        <h4>Е-mail</h4> 
+                        <p>rianita@mail.ru</p>
+                        <h4>Телефон</h4> 
+                        <p>8 905 725 51 59</p>
+                        <h4>Год рождения</h4> 
+                        <p>1990</p>
+                        <h4>Город, в котором живёте</h4> 
+                        <p>Москва</p>
+                        <h4>Вуз, факультет, специальность, кафедра</h4> 
+                        <p>Государственный Университет управления, Институт информационных систем управления, Менеджмент организации-экономико-математическое моделирование управления бизнес-системами, кафедра экономической кибернетики</p>
+                        <h4>Год окончания вуза</h4> 
+                        <p>2012</p>
+                        <h4>На каком уровне владеете английским языком?</h4> 
+                        <p>pre intermediate</p>
+                        <h4>Чего вы ожидаете от участия в Школе?</h4>  
+                        <p>Выучиться на разработчика интерфейсов и остаться работать в Яндексе. </p>
+                        <h4>Откуда вы о нас узнали?</h4> 
+                        <p>от знакомых</p>
+                        <h4>Сколько времени вы были бы готовы уделять стажировке или работе в Яндексе?</h4> 
+                        <p>35-40 часов в неделю.</p>
+		    </div>	
+		    <h3 class="head">Опыт разработки</h3>
+		    <div class="block">
+		        <h4>Расскажите нам о вашем опыте разработки. Ничего не упускайте: это может быть как серьезный интерфейс, так и просто домашняя страничка.</h4>
+                        <p>Страничка для ролевого клуба.</p>
+                        <h4>Какие языки программирования, фреймворки и технологии вы использовали? Сложились ли у вас личные предпочтения?</h4>	
+                        <p>javascript,  jquery</p>
+                        <h4>Какие редакторы и среды разработки вы использовали? Чем обычно пользуетесь?	</h4>
+                        <p>gedit</p>
+                        <h4>С какими ОС приходилось сталкиваться? Для каких целей вы их использовали?	</h4>
+                        <p>windows(98; xp; 7) - с момента появления компьютера, для учебы и отдыха; ubuntu 12.04(надоел windows)</p>
+                        <h4>Приходилось ли вам пользоваться системами контроля версий? Если да, то какими? Какая из них вам нравится больше всего?	</h4>
+                        <p>git</p>
+                        <h4>Использовали ли вы системы постановки и ведения задач?	</h4>
+                        <p>ms projeсt</p>
+                        <h4>Какие полезные для фронтенд-разработчика ресурсы вы используете и можете посоветовать?	</h4>
+                        <p>http://htmlbook.ru/; http://javascript.ru/</p>
+                        <h4>Работали ли вы где-нибудь? Какие у вас были должностные обязанности? Есть ли опыт работы в команде?</h4>
+                        <p>Работала в бухгалтерии в должности бухгалтера. В должностные обязанности входила работа с первичной бухгалтерской документацией, ведение участка "зарплата" и контроль оплаты счетов. 
+Опыт работы в команде -если можно считать таковым работу над материалом для публикации совместно с двумя  одногруппниками на 4 курсе института.
+                        </p>
+		    </div>	
+		    <h3 class="head">Технические вопросы</h3>
+		    <div class="block">
+		        <h4>5. Дана программа, реализованная одновременно на Bash, Python и Perl. Программа принимает произвольное количество аргументов и печатает их количество. Нужно добавить опцию -v для verbose-режима, в котором дополнительно выводится значение каждого из аргументов.</h4>
+		        <pre><code>
+#!/usr/bin/env python
+
+import argparse
+
+parser = argparse.ArgumentParser(description='Print the number of arguments.')
+parser.add_argument('arguments', metavar='ARG', type=str, nargs='*', help='some arguments')
+parser.add_argument('-m', dest='message', default='', help='custom message')
+parser.add_argument('-v', dest='verbose', default=False, help='verbose mode', required=False,
+                    action='store_const', const=True)
+# TODO: add '-v' option for verbose mode
+
+args = parser.parse_args()
+
+count = 0
+
+for a in args.arguments:
+    # TODO: add '-v' option for verbose mode
+    # and print each argument
+    if args.verbose:
+        print a
+    count += 1
+
+if args.message != '':
+    print(args.message)
+
+print(count)
+                       </code> </pre>
+                    </div>
+		</div>	
+	    </div>	
+        </div>
+    </body>
+</html>
+
